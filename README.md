@@ -21,11 +21,15 @@ SmartBank System is a professional-grade Java-based banking application with a m
 
 ### User Experience Features
 - **Modern GUI**: Responsive Swing-based interface with professional styling
-- **Audio Feedback**: Click, typing, and notification sounds for user interactions
-- **Color-Coded UI**: Professional color scheme (Blue primary, Black secondary)
-- **Card-Based Navigation**: Smooth transitions between login, main menu, and account management
-- **Real-Time Balance Updates**: Immediate balance reflection after transactions
-- **Intuitive Dialogs**: User-friendly input dialogues for transactions
+- **Audio Feedback
+- **Click Sound**: `click.wav` – Button click feedback  
+  `soundManager.playClickSound()`
+- **Typing Sound**: `type.wav` – Text input feedback  
+  `soundManager.playTypeSound()`
+- **Notification/Dialog Sound**: `open.wav` – Window/dialog open feedback  
+  `soundManager.playOpenSound()`
+- **Error Sound**: `wrong.wav` – Error message feedback  
+  `soundManager.playErrorSound()`
 
 ## Project Structure
 
@@ -42,7 +46,8 @@ SmartBank_System/
 └── resources/
     ├── click.wav                  # UI click sound
     ├── type.wav                   # Typing sound
-    ├── open.wav                   # Notification sound
+    ├── open.wav                   # Notification/dialog sound
+    ├── wrong.wav                  # Error message sound
     ├── appdata.db                 # SQLite database
     └── accounts.dat               # Account data storage
 ```
@@ -173,6 +178,8 @@ boolean transfer(BankAccount targetAccount, double amount)
 soundManager.playClickSound()     // Button click feedback
 soundManager.playTypeSound()      // Text input feedback
 soundManager.playOpenSound()      // Window/dialog open feedback
+Error Sound**: `wrong.wav` – Error message feedback (`soundManager.playErrorSound()`)
+
 ```
 
 #### Control Sounds
